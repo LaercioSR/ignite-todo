@@ -21,6 +21,8 @@ export function NewTask({ onCreateTask }: NewTaskProps) {
     setNewTaskText((state) => event.target.value);
   }
 
+  const isNewTaskTextIsEmpty = newTaskText.length === 0;
+
   return (
     <div className={styles.newTask}>
       <form action="submit" onSubmit={handleCreateNewTask}>
@@ -31,7 +33,7 @@ export function NewTask({ onCreateTask }: NewTaskProps) {
           onChange={handleNewTaskChange}
           required
         />
-        <button type="submit">
+        <button type="submit" disabled={isNewTaskTextIsEmpty}>
           Criar <PlusCircle size={20} />
         </button>
       </form>

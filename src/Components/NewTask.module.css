@@ -51,8 +51,13 @@
   transition: background-color 0.5s;
 }
 
-.newTask button[type="submit"]:hover {
+.newTask button[type="submit"]:not(:disabled):hover {
   background: var(--blue);
+}
+
+.newTask button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .newTask button svg {
