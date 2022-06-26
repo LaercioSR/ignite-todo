@@ -44,10 +44,17 @@
   padding: 1rem;
   cursor: pointer;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: background-color 0.5s;
 }
 
 .newTask button[type="submit"]:hover {
   background: var(--blue);
+}
+
+.newTask button svg {
+  margin-left: 0.5rem;
 }
