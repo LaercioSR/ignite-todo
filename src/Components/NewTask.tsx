@@ -1,5 +1,5 @@
 import { PlusCircle } from "phosphor-react";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 
 import styles from "./NewTask.module.css";
 
@@ -18,7 +18,12 @@ export function NewTask({ onCreateTask }: NewTaskProps) {
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
+    event.target.setCustomValidity("");
     setNewTaskText((state) => event.target.value);
+  }
+
+  function handleNewTaskInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
+    event.target.setCustomValidity("Esse campo é obrigatório!");
   }
 
   const isNewTaskTextIsEmpty = newTaskText.length === 0;
@@ -31,6 +36,7 @@ export function NewTask({ onCreateTask }: NewTaskProps) {
           placeholder="Adicione uma nova tarefa"
           value={newTaskText}
           onChange={handleNewTaskChange}
+          onInvalid={handleNewTaskInvalid}
           required
         />
         <button type="submit" disabled={isNewTaskTextIsEmpty}>
