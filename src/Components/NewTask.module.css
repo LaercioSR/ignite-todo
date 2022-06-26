@@ -5,7 +5,7 @@
 
 .newTask form {
   display: grid;
-  grid-template-columns: 40rem 1fr;
+  grid-template-columns: 37.875rem 1fr;
   gap: 0.5rem;
   align-items: flex-start;
 }

@@ -1,2 +1,23 @@
 .listTasks {
+  margin-top: 4rem;
+}
+
+.headerListTasks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasksCreated {
+  color: var(--blue);
+}
+
+.tasksDone {
+  color: var(--purple);
+}
+
+.totalTasks {
+  background: var(--gray-400);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 0.125rem 0.5rem;
 }
