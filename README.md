@@ -50,3 +50,4 @@ The following tools were used in building the project:
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[React](https://pt-br.reactjs.org/)**
   - [Vite](https://vitejs.dev/)
+  - [Phosphor Icons](https://phosphoricons.com/)
