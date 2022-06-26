@@ -20,13 +20,36 @@ function App() {
     setTasks((state) => [...tasks, task]);
   }
 
+  function deleteTask(id: number) {
+    const tasksWithoutDeleteOne = tasks.filter((task) => task.id !== id);
+    setTasks(tasksWithoutDeleteOne);
+  }
+
+  function markTask(id: number) {
+    const tasksWithMarkedOne = tasks.map((task) =>
+      task.id === id
+        ? {
+            id: task.id,
+            description: task.description,
+            isDone: !task.isDone,
+          }
+        : task
+    );
+
+    setTasks(tasksWithMarkedOne);
+  }
+
   return (
     <div>
       <Header />
 
       <div className={styles.wrapper}>
         <NewTask onCreateTask={createTask} />
-        <ListTasks tasks={tasks} />
+        <ListTasks
+          tasks={tasks}
+          onDeleteTask={deleteTask}
+          onMarkTask={markTask}
+        />
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
-import { Task } from "../interfaces/Task";
+import { Task as ITask } from "../interfaces/Task";
 import styles from "./ListTasks.module.css";
+import { Task } from "./Task";
 
 interface ListTasksProps {
-  tasks: Task[];
+  tasks: ITask[];
+  onDeleteTask: (id: number) => void;
+  onMarkTask: (id: number) => void;
 }
 
-export function ListTasks({ tasks }: ListTasksProps) {
+export function ListTasks({ tasks, onDeleteTask, onMarkTask }: ListTasksProps) {
   const totalTasks = tasks.length;
   const totalTasksDone = tasks.reduce((acc, task) => {
     return task.isDone ? acc + 1 : acc;
@@ -25,11 +28,17 @@ export function ListTasks({ tasks }: ListTasksProps) {
           </span>
         </strong>
       </div>
-      <ul>
-        {tasks.map((task) => {
-          return <li key={task.id}>{task.description}</li>;
-        })}
-      </ul>
+
+      {tasks.map((task) => {
+        return (
+          <Task
+            key={task.id}
+            {...task}
+            onDeleteTask={onDeleteTask}
+            onMarkTask={onMarkTask}
+          />
+        );
+      })}
     </div>
   );
 }
