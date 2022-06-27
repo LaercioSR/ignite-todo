@@ -15,7 +15,12 @@
 
 ## About
 
-System for creating and obtaining TODOs. Repository containing the project developed with a solution to a challenge in the Ignite Track of React by [Rocketseat](https://www.rocketseat.com.br/), .
+System for creating and obtaining TODOs. Repository containing the project developed with a solution to a challenge in the Ignite Track of React by [Rocketseat](https://www.rocketseat.com.br/).
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/LaercioSR/ignite-todo/main/public/screenshot-1.png" height="auto" width="40%" alt="Screenshot 1" />
+  <img src="https://raw.githubusercontent.com/LaercioSR/ignite-todo/main/public/screenshot-2.png" height="auto" width="40%" alt="Screenshot 2" />
+</div>
 
 ### Useful links
 
