@@ -1,5 +1,6 @@
 import { Task as ITask } from "../interfaces/Task";
 import styles from "./ListTasks.module.css";
+import { NoTasks } from "./NoTasks";
 import { Task } from "./Task";
 
 interface ListTasksProps {
@@ -29,16 +30,20 @@ export function ListTasks({ tasks, onDeleteTask, onMarkTask }: ListTasksProps) {
         </strong>
       </div>
 
-      {tasks.map((task) => {
-        return (
-          <Task
-            key={task.id}
-            {...task}
-            onDeleteTask={onDeleteTask}
-            onMarkTask={onMarkTask}
-          />
-        );
-      })}
+      {totalTasks > 0 ? (
+        tasks.map((task) => {
+          return (
+            <Task
+              key={task.id}
+              {...task}
+              onDeleteTask={onDeleteTask}
+              onMarkTask={onMarkTask}
+            />
+          );
+        })
+      ) : (
+        <NoTasks />
+      )}
     </div>
   );
 }

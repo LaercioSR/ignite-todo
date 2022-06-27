@@ -8,12 +8,19 @@
   gap: 1rem;
 }
 
+.task + .task {
+  margin-top: 0.75rem;
+}
+
 .task button {
   background: transparent;
   color: var(--gray-300);
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   transition: color 0.3s, background-color 0.3s;
 }
 
@@ -58,6 +65,11 @@
 .checkboxDone input:checked ~ .checkmark {
   border: 0;
   background: var(--purple-dark);
+  transition: background-color 0.3s;
+}
+
+.checkboxDone:hover input:checked ~ .checkmark {
+  background: var(--purple);
 }
 
 .checkmark:after {

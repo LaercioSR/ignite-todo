@@ -11,8 +11,9 @@ function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   function createTask(description: string) {
+    const now = new Date();
     const task = {
-      id: tasks.length + 1,
+      id: now.getTime(),
       description,
       isDone: false,
     };
